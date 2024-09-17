@@ -20,10 +20,10 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen">
-      <nav className="mb-0 flex flex-col justify-between w-1/5 md:h-screen">
+      <nav className="flex flex-col justify-between w-1/5 bg-blue-500">
         <div>
           <div>
-            <ul className="text-center mx-3 text-blanco">
+            <ul className="text-center mx-3 text-black">
               <li className="mt-6 mb-7">
                 <Link
                   to="/dashboard"
@@ -48,12 +48,12 @@ const Dashboard = () => {
             </ul>
           </div>
         </div>
-        <div className="mx-3 mb-5 flex justify-between md:justify-end">
-          <div className="m-2">
+        <div className="flex justify-center">
+          <div className="">
             <Link to="/"
-            // onClick={handleLogout}
+              onClick={handleLogout}
             >
-              <button className="py-2 ml-3 flex items-center md:px-4 text-blanco font-semibold rounded-xl hover:shadow-lg hover:shadow-turquesa-fuerte">
+              <button className="py-2 ml-3 flex items-center md:px-4 text-black font-semibold rounded-xl hover:shadow-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -77,8 +77,8 @@ const Dashboard = () => {
           </div>
         </div>
       </nav>
-      <section className="flex-1 flex-col justify-between h-screen">
-        <div className="overflow-y-scroll px-8 h-5/6 flex flex-col justify-center">
+      <section className="flex-1 flex-col justify-between">
+        <div className="overflow-y-scroll m-9 h-5/6 flex flex-col justify-center">
           {/* {autenticado ?  */}
           <Outlet />
           {/* : <Navigate to="/inicioSesion" />} */}

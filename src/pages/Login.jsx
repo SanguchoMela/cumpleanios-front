@@ -24,7 +24,7 @@ function Login() {
                     <MDBInput wrapperClass='mb-4' label='Contraseña' id='formControlLg' type='password' size="lg" />
 
                     <Link to='/dashboard'>
-                        <MDBBtn className="mb-4 w-100" size="lg">Iniciar Sesión</MDBBtn>
+                        <MDBBtn className="mb-4 bg-blue-500" size="lg">Iniciar Sesión</MDBBtn>
                     </Link>
 
                 </MDBCol>
