@@ -7,6 +7,7 @@ import Calendar from './pages/Calendar';
 import Employees from './pages/Employees';
 import Report from './pages/Report';
 import { AuthProvider } from './context/AuthProvider';
+import CreateEmployee from './pages/CreateEmployee';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route element={<Dashboard />}>
                   <Route index element={<Calendar />} />
                   <Route path='empleados' element={<Employees />} />
+                  <Route path='crear-empleado' element={<CreateEmployee />} />
                   <Route path='reporte' element={<Report />} />
                 </Route>
               </Routes>
