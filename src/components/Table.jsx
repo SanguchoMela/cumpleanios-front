@@ -1,7 +1,30 @@
+import axios from 'axios';
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 import { MdDelete } from "react-icons/md";
 
 export default function Table({ urlActual, empleados }) {
+
+  const handleDelete = async (id) => {
+    try {
+      const confirmar = window.confirm(
+        "Vas a eliminar a un empleado, ¿estás seguro de realizar esta acción?"
+      );
+      if (confirmar) {
+        const jwt = localStorage.getItem("jwt");
+        const url = `${import.meta.env.VITE_BACKEND_URL}/users/${id}`;
+        const options = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${jwt}`,
+          },
+        };
+        const response = await axios.delete(url, options);
+      }
+    } catch (error) {
+      console.log(error)
+    } 
+  }
+
   return (
     <>
       <MDBTable>
@@ -23,7 +46,7 @@ export default function Table({ urlActual, empleados }) {
               <td>{employee.name}</td>
               <td>{employee.lastName}</td>
               <td>{employee.birthDate}</td>
-              <td><MdDelete /></td>
+              <td><MdDelete onClick={() => {handleDelete(employee.id)}} /></td>
             </tr>
           ))}
           {urlActual === "/dashboard/reporte" && empleados && empleados.map((employee, index) => (
