@@ -22,24 +22,35 @@ const Dashboard = () => {
     <div className="flex min-h-screen">
       <nav className="flex flex-col justify-between w-1/5 bg-blue-500 h-screen">
         <div>
-          <div>
-            <ul className="text-center mx-3 text-black">
-              <li className="mt-6 mb-7">
-                <Link to="/dashboard">Calendario</Link>
+          <ul className="text-center text-black">
+            <Link to="/dashboard" className="text-black hover:text-black">
+              <li className="mt-5 hover:bg-blue-400 hover:shadow-lg py-2">
+                Calendario
               </li>
-              <li className="mt-6 mb-7">
-                <Link to="/dashboard/empleados">Empleados</Link>
+            </Link>
+            <Link
+              to="/dashboard/empleados"
+              className="text-black hover:text-black"
+            >
+              <li className="my-5 hover:bg-blue-400 hover:shadow-lg py-2">
+                Empleados
               </li>
-              <li className="mt-6 mb-7">
-                <Link to="/dashboard/reporte">Reporte</Link>
+            </Link>
+            <Link
+              to="/dashboard/reporte"
+              className="text-black hover:text-black"
+            >
+              <li className="hover:bg-blue-400 hover:shadow-lg py-2">
+                Reporte
               </li>
-            </ul>
-          </div>
+            </Link>
+          </ul>
         </div>
+
         <div className="flex justify-center">
-          <div className="">
+          <div className="mb-3">
             <Link to="/" onClick={handleLogout}>
-              <button className="py-2 ml-3 flex items-center md:px-4 text-black font-semibold rounded-xl hover:shadow-lg">
+              <button className="py-2 ml-3 flex items-center md:px-4 text-black font-semibold rounded-xl hover:shadow-lg hover:bg-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
