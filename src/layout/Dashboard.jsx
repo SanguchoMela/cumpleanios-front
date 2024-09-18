@@ -20,25 +20,25 @@ const Dashboard = () => {
     <div className="flex min-h-screen">
       <nav className="flex flex-col justify-between w-1/5 bg-blue-500 h-screen">
         <div>
-          <ul className="text-center text-black">
-            <Link to="/dashboard" className="text-black hover:text-black">
-              <li className="mt-5 hover:bg-blue-400 hover:shadow-lg py-2">
+          <ul className="text-center">
+            <Link to="/dashboard" className="text-white">
+              <li className="mt-5 hover:bg-blue-700 hover:shadow-lg py-2">
                 Calendario
               </li>
             </Link>
             <Link
               to="/dashboard/empleados"
-              className="text-black hover:text-black"
+              className="text-white"
             >
-              <li className="my-5 hover:bg-blue-400 hover:shadow-lg py-2">
+              <li className="my-5 hover:bg-blue-700 hover:shadow-lg py-2">
                 Empleados
               </li>
             </Link>
             <Link
               to="/dashboard/reporte"
-              className="text-black hover:text-black"
+              className="text-white"
             >
-              <li className="hover:bg-blue-400 hover:shadow-lg py-2">
+              <li className="hover:bg-blue-700 hover:shadow-lg py-2">
                 Reporte
               </li>
             </Link>
