@@ -1,7 +1,10 @@
 import React from 'react';
 import Table from '../components/Table';
+import { useLocation } from 'react-router-dom';
 
 const Report = () => {
+  const location = useLocation()
+  const urlActual = location.pathname
   return (
     <>
       <div className="mt-1 w-full flex justify-center mb-5">
@@ -18,7 +21,7 @@ const Report = () => {
           name="mes"
         />
       </div>
-      <Table />
+      <Table urlActual={urlActual} />
     </>
   );
 }

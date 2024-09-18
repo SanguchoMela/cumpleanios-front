@@ -45,11 +45,11 @@ export default function Table({ urlActual }) {
         </MDBTableHead>
         <MDBTableBody>
           {employees && employees.map((employee, index) => (
-            <tr key={employee.id}>
-              <th scope='row'>{employee.id}</th>
+            <tr key={index}>
+              <th scope='row'>{index+1}</th>
               <td>{employee.name}</td>
               <td>{employee.lastName}</td>
-              <td>{employee.dateBirth}</td>
+              <td>{employee.birthDate}</td>
               {urlActual === "/dashboard/empleados" && (
                 <td><MdDelete /></td>
               )}
