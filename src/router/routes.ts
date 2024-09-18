@@ -1,7 +1,7 @@
 import { lazy } from 'react'
-import { manage } from './modules/manage' // 面板管理
-import { list } from './modules/list' // 日记管理
-import { personal } from './modules/personal' // 我的状态
+import { manage } from './modules/manage' 
+import { list } from './modules/list' 
+import { personal } from './modules/personal' 
 import { MenuItem, Item } from './index.d'
 import { AppstoreOutlined, UnorderedListOutlined, UserOutlined } from '@ant-design/icons'
 
@@ -12,24 +12,30 @@ interface router {
 	children?: Array<router>
 }
 
-// 菜单项配置
+
 export const menus: Array<MenuItem> = [
 	{
-		key: 'panel', // 一级菜单key
-		label: 'aside.panel.nav', // 菜单名称（多语言配置参考i18n/locales中的文件）
-		icon: AppstoreOutlined, // 菜单图标（图标样式参考antd官网）
+		key: 'panel', 
+		label: 'aside.panel.nav', 
+		icon: AppstoreOutlined, 
 		children: manage
 	},
 	{
 		key: 'list',
 		label: 'aside.list.nav',
-		icon: UnorderedListOutlined,
+		icon: UserOutlined,
 		children: list
 	},
 	{
 		key: 'personal',
 		label: 'aside.personal.nav',
-		icon: UserOutlined,
+		icon: UnorderedListOutlined,
+		children: personal
+	},
+	{
+		key: 'logger',
+		label: 'aside.logger.nav',
+		icon: UnorderedListOutlined,
 		children: personal
 	}
 ]

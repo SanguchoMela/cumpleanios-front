@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '@/store/index'
 import { observer } from 'mobx-react-lite'
-import logoOrigin from '@/assets/imgs/frame/logo_origin.png'
+import logoOrigin from '@/assets/imgs/frame/hb.png'
 
 interface IFormValues {
 	username: string
@@ -83,7 +83,7 @@ function Login() {
 	const navigate = useNavigate()
 	const { basicStore, configStore } = useStore()
 	const [loading, setLoading] = useState(false)
-	// 登录
+	// Login Access
 	const onFinish = (values: IFormValues) => {
 		basicStore.login()
 		if (values.username == 'admin' && values.password == '123456') {
@@ -104,7 +104,7 @@ function Login() {
 			<div className="w-2/3 sm:w-2/5 xl:w-1/3 2xl:w-1/4 rounded-xl pt-5 px-5 bg-white">
 				<Spin spinning={loading}>
 					<div className="max-w-xs w-2/3 h-12 mb-8 mx-auto">
-						<img className="w-full h-full px-3 sm:px-10" src={logoOrigin} alt="" />
+						<img className="w-full h-full px-4 sm:px-10" src={logoOrigin} alt="" />
 					</div>
 					<Form
 						name="normal_login"

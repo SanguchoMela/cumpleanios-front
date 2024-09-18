@@ -6,32 +6,29 @@ import { Layout, Drawer } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
 import SiderMenu from './sider/index'
 import HeaderNav from './header/index'
-import logoMini from '@/assets/imgs/frame/logo_mini.png'
+
 const { Header, Content, Sider } = Layout
 
 function LayoutConfig() {
   const { configStore } = useStore()
-  const navigate = useNavigate() // 路由跳转
-  const [collapsed, setCollapsed] = useState(false) // 菜单栏收起状态
-  const [visible, setVisible] = useState(false) // Drawer状态
-  const [width, setWidth] = useState(window.innerWidth) // 窗口宽度
+  const navigate = useNavigate()
+  const [collapsed, setCollapsed] = useState(false)
+  const [visible, setVisible] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth)
   const toggle = () => {
     if (width > 650) setCollapsed(!collapsed)
     setVisible(true)
   }
 
-  // 关闭drawer
   const onClose = () => {
     setVisible(false)
   }
 
-  // 返回首页
   const backHome = () => {
     configStore.crumbItem()
     navigate('/', { replace: true })
   }
 
-  // 获取窗口宽度
   window.onresize = () => {
     setWidth(window.innerWidth)
   }
@@ -39,14 +36,12 @@ function LayoutConfig() {
     width < 650 ? setCollapsed(true) : setCollapsed(false)
   }, [width])
 
-  // 监听菜单栏是否收缩
   useEffect(() => {
     configStore.watchCollapsed(collapsed)
   }, [collapsed])
 
   return (
     <Layout className="h-full select-none">
-      {/* 侧边栏适配移动端 */}
       {width < 650 ? (
         <Drawer
           placement="left"
@@ -81,7 +76,7 @@ function LayoutConfig() {
         <Header className="flex items-center !bg-white shadow-box !p-0">
           {width < 650 ? (
             <span className="w-24 h-full text-center cursor-pointer px-5 py-2" onClick={backHome}>
-              <img className="w-full h-full" src={logoMini} alt="" />
+              
             </span>
           ) : (
             ''

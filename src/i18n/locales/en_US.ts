@@ -8,17 +8,15 @@ const en_US = {
 	},
 	aside: {
 		panel: {
-			nav: 'Panel Manage',
+			nav: 'Calendario',
 			analysis_panel: 'Analysis Panel'
 		},
 		list: {
-			nav: 'List Manage',
-			diary_list: 'Diary List',
-			diary_records: 'Diary Records',
-			user_list: 'User List'
+			nav: 'Empleados',
+			diary_list: 'Lista Empleados',
 		},
 		personal: {
-			nav: 'Personal Center',
+			nav: 'Reporte',
 			personal_status: 'My Moment'
 		}
 	},
