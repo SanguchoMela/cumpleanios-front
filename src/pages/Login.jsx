@@ -34,6 +34,7 @@ function Login() {
         const password = formData.get("password");
 
         if (username === "" || password === "" ){
+            window.alert("Error al iniciar sesión")
             return
         }
 
