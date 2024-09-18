@@ -11,10 +11,10 @@ const Dashboard = () => {
   const location = useLocation();
   const urlActual = location.pathname;
 
-  const autenticado = localStorage.getItem("token");
+  const autenticado = localStorage.getItem("jwt");
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("jwt");
     setAuth(null);
   };
 
