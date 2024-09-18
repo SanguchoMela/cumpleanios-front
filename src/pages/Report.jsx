@@ -4,18 +4,18 @@ import Table from '../components/Table';
 const Report = () => {
   return (
     <>
-      <div className="mt-1">
+      <div className="mt-1 w-full flex justify-center mb-5">
         <label
-          className="text-sm font-semibold"
-          htmlFor="fechaNacimiento"
+          className="text-sm font-semibold mr-5"
+          htmlFor="mes"
         >
-          Fecha de nacimiento
+          Selecciona un mes
         </label>
         <input
-          className="py-2 px-2 w-full border border-turquesa-fuerte rounded-lg focus:outline-none focus:ring-1 focus:ring-turquesa-100"
+          className="p-2 border rounded-lg"
           id="fechaNacimiento"
-          type="date"
-          name="fechaNacimiento"
+          type="month"
+          name="mes"
         />
       </div>
       <Table />

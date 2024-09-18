@@ -11,10 +11,10 @@ export default function Table({ urlActual }) {
             <th scope='col'>N°</th>
             <th scope='col'>Nombre</th>
             <th scope='col'>Apellido</th>
+            <th scope='col'>Fecha de nacimiento</th>
             {urlActual === "/dashboard/empleados" && (
-              <th scope='col'>Fecha de nacimiento</th>
+              <th scope='col'>Opciones</th>
             )}
-            <th scope='col'>Opciones</th>
           </tr>
         </MDBTableHead>
         <MDBTableBody>
@@ -22,10 +22,10 @@ export default function Table({ urlActual }) {
             <th scope='row'>1</th>
             <td>Mark</td>
             <td>Otto</td>
+            <td>@mdo</td>
             {urlActual === "/dashboard/empleados" && (
-              <td>@mdo</td>
+              <td><MdDelete /></td>
             )}
-            <td><MdDelete /></td>
           </tr>
         </MDBTableBody>
       </MDBTable></>
