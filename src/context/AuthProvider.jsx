@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
       const url = `${import.meta.env.VITE_BACKEND_URL}/auth/log-in`;
       const response = await axios.post(url, { username, password });
       const userData = response.data;
-      console.log(response)
+      localStorage.setItem("jwt", userData.jwt)
       setAuth(userData);
     } catch (error) {
       console.log(error)
