@@ -107,7 +107,7 @@ export default function Form() {
                 </div>
                 <div className="m-6 flex justify-end">
                     <MDBBtn type="submit" className="mr-4 bg-blue-500" size="sm">Registrar</MDBBtn>
-                    <MDBBtn className="bg-orange-500" size="sm">Cancelar</MDBBtn>
+                    <MDBBtn className="bg-orange-500 hover:bg-orange-600" size="sm">Cancelar</MDBBtn>
                 </div>
             </form>
         </>

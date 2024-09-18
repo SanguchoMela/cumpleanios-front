@@ -48,7 +48,7 @@ const Dashboard = () => {
         <div className="flex justify-center">
           <div className="mb-3">
             <Link to="/" onClick={handleLogout}>
-              <MDBBtn className="bg-orange-500" size="lg" onClick={handleLogout}>Cerrar sesión</MDBBtn>
+              <MDBBtn className="bg-orange-500 hover:bg-orange-600" size="lg" onClick={handleLogout}>Cerrar sesión</MDBBtn>
             </Link>
           </div>
         </div>

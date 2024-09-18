@@ -10,7 +10,7 @@ const Employees = () => {
   return (
     <>
       <Link className='flex justify-end' to={"/dashboard/crear-empleado"}>
-        <MDBBtn className="mb-4 bg-blue-500" size="lg">Crear empleado</MDBBtn>
+        <MDBBtn className="mb-4 bg-blue-500" size="md">Crear empleado</MDBBtn>
       </Link>
       <Search/>
       <Table urlActual={urlActual} />
