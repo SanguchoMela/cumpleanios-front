@@ -1,34 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 import { MdDelete } from "react-icons/md";
-import axios from 'axios';
 
-export default function Table({ urlActual }) {
-  const [employees, setEmployees] = useState([])
-
-  const listarEmpleados = async () => {
-    try {
-      const jwt = localStorage.getItem("jwt");
-      const url = `${import.meta.env.VITE_BACKEND_URL}/users`;
-      const options = {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${jwt}`,
-        },
-      };
-      const response = await axios.get(url, options);
-      const empleados = response.data;
-      console.log(empleados)
-      setEmployees(empleados);
-    } catch (error) {
-      console.log(error)
-    }
-  };
-
-  useEffect(() => {
-    listarEmpleados()
-  }, [])
-
+export default function Table({ urlActual, empleados }) {
   return (
     <>
       <MDBTable>
@@ -44,15 +17,21 @@ export default function Table({ urlActual }) {
           </tr>
         </MDBTableHead>
         <MDBTableBody>
-          {employees && employees.map((employee, index) => (
+          {urlActual === "/dashboard/empleados" && empleados && empleados.map((employee, index) => (
             <tr key={index}>
-              <th scope='row'>{index+1}</th>
+              <th scope='row'>{index + 1}</th>
               <td>{employee.name}</td>
               <td>{employee.lastName}</td>
               <td>{employee.birthDate}</td>
-              {urlActual === "/dashboard/empleados" && (
-                <td><MdDelete /></td>
-              )}
+              <td><MdDelete /></td>
+            </tr>
+          ))}
+          {urlActual === "/dashboard/reporte" && empleados && empleados.map((employee, index) => (
+            <tr key={index}>
+              <th scope='row'>{index + 1}</th>
+              <td>{employee.name}</td>
+              <td>{employee.last_name}</td>
+              <td>{employee.dateBirth}</td>
             </tr>
           ))}
         </MDBTableBody>
