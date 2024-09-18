@@ -20,39 +20,25 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen">
-      <nav className="flex flex-col justify-between w-1/5 bg-blue-500">
+      <nav className="flex flex-col justify-between w-1/5 bg-blue-500 h-screen">
         <div>
           <div>
             <ul className="text-center mx-3 text-black">
               <li className="mt-6 mb-7">
-                <Link
-                  to="/dashboard"
-                >
-                  Calendario
-                </Link>
+                <Link to="/dashboard">Calendario</Link>
               </li>
               <li className="mt-6 mb-7">
-                <Link
-                  to="/dashboard/empleados"
-                >
-                  Empleados
-                </Link>
+                <Link to="/dashboard/empleados">Empleados</Link>
               </li>
               <li className="mt-6 mb-7">
-                <Link
-                  to="/dashboard/reporte"
-                >
-                  Reporte
-                </Link>
+                <Link to="/dashboard/reporte">Reporte</Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="flex justify-center">
           <div className="">
-            <Link to="/"
-              onClick={handleLogout}
-            >
+            <Link to="/" onClick={handleLogout}>
               <button className="py-2 ml-3 flex items-center md:px-4 text-black font-semibold rounded-xl hover:shadow-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +63,7 @@ const Dashboard = () => {
           </div>
         </div>
       </nav>
-      <section className="flex-1 flex-col justify-between">
+      <section className="flex-1 flex-col justify-between h-screen">
         <div className="overflow-y-scroll m-9 h-5/6 flex flex-col justify-center">
           {/* {autenticado ?  */}
           <Outlet />
