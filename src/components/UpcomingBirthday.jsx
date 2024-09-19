@@ -25,11 +25,13 @@ export default function UpcomingBirthday() {
             const empleados = response.data
 
             const today = moment()
+            const startOfMonth = today.clone().startOf('month');
+            const endOfMonth = today.clone().endOf('month');
 
             const upcomingEmployees = empleados.filter((employee) => {
                 const birthDate = moment(employee.birthDate, "YYYY-MM-DD")
                 const thisYearBirthday = birthDate.year(today.year())
-                return thisYearBirthday.isBetween(today, today.clone().add(30, 'days'));
+                return thisYearBirthday.isBetween(startOfMonth, endOfMonth, null, '[]');
             })
 
             setEmployees(upcomingEmployees)
