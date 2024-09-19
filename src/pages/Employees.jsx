@@ -23,9 +23,7 @@ const Employees = () => {
       };
       const response = await axios.get(url, options);
       const empleados = response.data;
-      console.log(empleados)
       setEmployees(empleados);
-      console.log(employees)
     } catch (error) {
       console.log(error)
     }
@@ -38,7 +36,7 @@ const Employees = () => {
   return (
     <>
       <Link className='flex justify-end' to={"/dashboard/crear-empleado"}>
-        <MDBBtn className="mb-4 bg-blue-500" size="md">Crear empleado</MDBBtn>
+        <MDBBtn className="mb-4 bg-blue-500" size="md">Registrar empleado</MDBBtn>
       </Link>
       <Search />
       <Table urlActual={urlActual} empleados={employees} />
