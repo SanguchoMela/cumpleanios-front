@@ -9,6 +9,8 @@ const Employees = () => {
   const location = useLocation()
   const urlActual = location.pathname
 
+  const [empleadosFiltrados, setEmpleadosFiltrados] = useState([]);
+
   const [employees, setEmployees] = useState([])
 
   const listarEmpleados = async () => {
@@ -24,6 +26,7 @@ const Employees = () => {
       const response = await axios.get(url, options);
       const empleados = response.data;
       setEmployees(empleados);
+      setEmpleadosFiltrados(empleados)
     } catch (error) {
       console.log(error)
     }
@@ -38,8 +41,8 @@ const Employees = () => {
       <Link className='flex justify-end' to={"/dashboard/crear-empleado"}>
         <MDBBtn className="mb-4 bg-blue-500" size="md">Registrar empleado</MDBBtn>
       </Link>
-      <Search />
-      <Table urlActual={urlActual} empleados={employees} />
+      <Search empleados={employees} setEmpleadosFiltrados={setEmpleadosFiltrados} />
+      <Table urlActual={urlActual} empleados={empleadosFiltrados ? empleadosFiltrados : employees} />
     </>
   );
 }
