@@ -40,7 +40,7 @@ const Report = () => {
       console.log(error)
     }
   }
-  
+
   const generatePDF = () => {
     const doc = new jsPDF();
     const currentMonthBirthday = moment(monthEmployees[0].dateBirth).format('MMMM').toLowerCase()
@@ -82,11 +82,6 @@ const Report = () => {
 
   return (
     <>
-      <div className='mb-4 flex justify-end'>
-        {monthEmployees.length > 0 && (
-          <MDBBtn className="bg-orange-500 w-36 hover:bg-orange-600" onClick={generatePDF} size="md">Descargar PDF</MDBBtn>
-        )}
-      </div>
       <div className="mt-1 w-full flex justify-center mb-5">
         <label
           className="text-sm font-semibold mr-5"
@@ -102,6 +97,11 @@ const Report = () => {
           value={selectedMonth}
           onChange={handleMonthChange}
         />
+      </div>
+      <div className='mb-4 flex justify-end'>
+        {monthEmployees.length > 0 && (
+          <MDBBtn className="bg-orange-500 w-36 hover:bg-orange-600" onClick={generatePDF} size="md">Descargar PDF</MDBBtn>
+        )}
       </div>
       <Table urlActual={urlActual} empleados={monthEmployees} />
     </>
