@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { MDBBtn } from 'mdb-react-ui-kit';
 
 export default function Form() {
-    const navigate = useNavigate()
     const [form, setForm] = useState({
         name: "",
         lastName: "",

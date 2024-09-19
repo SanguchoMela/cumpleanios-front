@@ -2,7 +2,8 @@ import axios from 'axios';
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 import { MdDelete } from "react-icons/md";
 
-export default function Table({ urlActual, empleados }) {
+export default function Table({ urlActual, empleados=[] }) {
+  const arrayLength = empleados.length
 
   const handleDelete = async (id) => {
     try {
@@ -22,7 +23,7 @@ export default function Table({ urlActual, empleados }) {
       }
     } catch (error) {
       console.log(error)
-    } 
+    }
   }
 
   return (
@@ -46,7 +47,7 @@ export default function Table({ urlActual, empleados }) {
               <td>{employee.name}</td>
               <td>{employee.lastName}</td>
               <td>{employee.birthDate}</td>
-              <td><MdDelete className='w-5 h-5 cursor-pointer' onClick={() => {handleDelete(employee.id)}} /></td>
+              <td><MdDelete className='w-5 h-5 cursor-pointer' onClick={() => { handleDelete(employee.id) }} /></td>
             </tr>
           ))}
           {urlActual === "/dashboard/reporte" && empleados && empleados.map((employee, index) => (
@@ -58,6 +59,10 @@ export default function Table({ urlActual, empleados }) {
             </tr>
           ))}
         </MDBTableBody>
-      </MDBTable></>
+      </MDBTable>
+      <div className='flex justify-center'>
+        <span className='font-bold mr-3'>Total:</span> <span>{arrayLength}</span>
+      </div>
+    </>
   );
 }
