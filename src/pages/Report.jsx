@@ -53,6 +53,7 @@ const Report = () => {
       { header: "Nombre", dataKey: "name" },
       { header: "Apellido", dataKey: "last_name" },
       { header: "Teléfono", dataKey: "phone" },
+      { header: "Edad", dataKey: "age" },
       { header: "Fecha de Nacimiento", dataKey: "dateBirth" },
     ];
 
@@ -61,6 +62,7 @@ const Report = () => {
       name: employee.name,
       last_name: employee.last_name,
       phone: employee.phone,
+      age: employee.age,
       dateBirth: employee.dateBirth,
     }));
 

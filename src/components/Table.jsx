@@ -35,6 +35,9 @@ export default function Table({ urlActual, empleados = [] }) {
             <th scope='col'>Nombre</th>
             <th scope='col'>Apellido</th>
             <th scope='col'>Teléfono</th>
+            {urlActual === "/dashboard/reporte" && (
+              <th scope='col'>Edad</th>
+            )}
             <th scope='col'>Fecha de nacimiento</th>
             {urlActual === "/dashboard/empleados" && (
               <th scope='col'>Opciones</th>
@@ -58,6 +61,7 @@ export default function Table({ urlActual, empleados = [] }) {
               <td>{employee.name}</td>
               <td>{employee.last_name}</td>
               <td>{employee.phone}</td>
+              <td>{employee.age}</td>
               <td>{employee.dateBirth}</td>
             </tr>
           ))}
