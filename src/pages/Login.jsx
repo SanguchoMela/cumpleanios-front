@@ -52,14 +52,14 @@ function Login() {
             <MDBRow>
 
                 <MDBCol col='10' md='6'>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" alt="Phone image" />
                 </MDBCol>
 
                 <MDBCol col='4' md='6'>
 
                     <form onSubmit={handleSubmit}>
-                        <MDBInput wrapperClass='mb-4' label='Usuario' id='formControlLg' type='text' name='username' size="lg" value={form.username} onChange={handleChange} />
-                        <MDBInput wrapperClass='mb-4' label='Contraseña' id='formControlLg' type='password' name='password' size="lg" value={form.password} onChange={handleChange} />
+                        <MDBInput wrapperClass='mb-4' label='Usuario' id='username' type='text' name='username' size="lg" value={form.username} onChange={handleChange} />
+                        <MDBInput wrapperClass='mb-4' label='Contraseña' id='password' type='password' name='password' size="lg" value={form.password} onChange={handleChange} />
 
                         <MDBBtn type='submit' className="mb-4 bg-blue-500" size="lg">Iniciar Sesión</MDBBtn>
                     </form>
