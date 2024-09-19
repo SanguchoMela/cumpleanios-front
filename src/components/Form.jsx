@@ -6,6 +6,7 @@ export default function Form() {
     const [form, setForm] = useState({
         name: "",
         lastName: "",
+        phone: "",
         birthDate: "",
         email: "",
     })
@@ -68,6 +69,20 @@ export default function Form() {
                             placeholder="Ingresa el apellido"
                             name="lastName"
                             value={form.lastName || ""}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="mt-1">
+                        <label className="text-sm font-semibold" htmlFor="phone">
+                            Teléfono
+                        </label>
+                        <input
+                            className="py-2 pl-2 w-full border rounded-lg focus:ring-1"
+                            id="phone"
+                            type="text"
+                            placeholder="Ingresa el número de teléfono"
+                            name="phone"
+                            value={form.phone || ""}
                             onChange={handleChange}
                         />
                     </div>
