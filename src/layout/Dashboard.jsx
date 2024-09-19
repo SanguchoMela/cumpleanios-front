@@ -1,51 +1,36 @@
 import {
   Link,
   Navigate,
+  NavLink,
   Outlet,
-  useLocation,
 } from "react-router-dom";
 import { MDBBtn } from 'mdb-react-ui-kit';
 
 const Dashboard = () => {
-  const location = useLocation();
-  const urlActual = location.pathname;
-
   const autenticado = localStorage.getItem("jwt");
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
-    setAuth(null);
   };
 
   return (
     <div className="flex min-h-screen">
-      <nav className="flex flex-col justify-between w-1/5 bg-blue-500 h-screen">
-        <div>
-          <ul className="text-center">
-            <Link to="/dashboard" className="text-white">
-              <li className="mt-5 hover:bg-blue-700 hover:shadow-lg py-2">
-                Calendario
-              </li>
-            </Link>
-            <Link
-              to="/dashboard/empleados"
-              className="text-white"
-            >
-              <li className="my-5 hover:bg-blue-700 hover:shadow-lg py-2">
-                Empleados
-              </li>
-            </Link>
-            <Link
-              to="/dashboard/reporte"
-              className="text-white"
-            >
-              <li className="hover:bg-blue-700 hover:shadow-lg py-2">
-                Reporte
-              </li>
-            </Link>
-          </ul>
-        </div>
-
+      <nav className="flex flex-col justify-around w-1/5 bg-blue-500 h-screen text-center">
+        <NavLink to="/dashboard/calendar" className="mt-5" >
+          {({ isActive }) => (
+            <span className={isActive ? "bg-blue-700 text-white p-3 rounded-lg" : "mt-5 hover:bg-blue-700 hover:shadow-lg p-3 rounded-lg text-white"}>Calendario</span>
+          )}
+        </NavLink>
+        <NavLink to="/dashboard/empleados" >
+          {({ isActive }) => (
+            <span className={isActive ? "bg-blue-700 text-white p-3 rounded-lg" : "mt-5 hover:bg-blue-700 hover:shadow-lg p-3 rounded-lg text-white"}>Empleados</span>
+          )}
+        </NavLink>
+        <NavLink to="/dashboard/reporte" >
+          {({ isActive }) => (
+            <span className={isActive ? "bg-blue-700 text-white p-3 rounded-lg" : "mt-5 hover:bg-blue-700 hover:shadow-lg p-3 rounded-lg text-white"}>Reporte</span>
+          )}
+        </NavLink>
         <div className="flex justify-center">
           <div className="mb-3">
             <Link to="/" onClick={handleLogout}>
@@ -55,7 +40,7 @@ const Dashboard = () => {
         </div>
       </nav>
       <section className="flex-1 flex-col justify-between h-screen">
-        <div className="overflow-y-scroll m-9 h-5/6 flex flex-col justify-center">
+        <div className="m-9 h-5/6 flex flex-col justify-center">
           {autenticado ?
             <Outlet />
             : <Navigate to="/" />}

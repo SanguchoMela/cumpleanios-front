@@ -40,7 +40,7 @@ function Login() {
 
         try {
             await login(username, password);
-            navigate("/dashboard");
+            navigate("/dashboard/calendar");
         } catch (e) {
             console.log(e);
             setForm({});
