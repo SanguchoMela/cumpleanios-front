@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Calendario from '../components/Calendario';
 import axios from 'axios';
 import moment from 'moment';
+import UpcomingBirthday from '../components/UpcomingBirthDay';
 
 export default function Calendar() {
   const [events, setEvents] = useState([]);
@@ -51,6 +52,9 @@ export default function Calendar() {
   }, [])
 
   return (
-    <Calendario events={events} />
+    <div className='flex h-full place-content-around'>
+      <Calendario events={events} />
+      <UpcomingBirthday />
+    </div>
   );
 }
