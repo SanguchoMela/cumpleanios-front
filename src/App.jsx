@@ -8,13 +8,16 @@ import Employees from './pages/Employees';
 import Report from './pages/Report';
 import { AuthProvider } from './context/AuthProvider';
 import CreateEmployee from './pages/CreateEmployee';
+import Auth from './layout/Auth';
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route index element={<Login />} />
+          <Route path='/' element={<Auth />}>
+            <Route index element={<Login />} />
+          </Route>
           <Route
             path="/dashboard/*"
             element={

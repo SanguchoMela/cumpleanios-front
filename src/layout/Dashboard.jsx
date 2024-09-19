@@ -1,5 +1,6 @@
 import {
   Link,
+  Navigate,
   Outlet,
   useLocation,
 } from "react-router-dom";
@@ -55,9 +56,9 @@ const Dashboard = () => {
       </nav>
       <section className="flex-1 flex-col justify-between h-screen">
         <div className="overflow-y-scroll m-9 h-5/6 flex flex-col justify-center">
-          {/* {autenticado ?  */}
-          <Outlet />
-          {/* : <Navigate to="/inicioSesion" />} */}
+          {autenticado ?
+            <Outlet />
+            : <Navigate to="/" />}
         </div>
         <footer className="h-10">
           <p className="text-sm text-center font-medium text-turquesa-fuerte leading-[3.6rem]">
