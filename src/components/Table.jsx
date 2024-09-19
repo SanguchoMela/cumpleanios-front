@@ -18,7 +18,7 @@ export default function Table({ urlActual, empleados }) {
             Authorization: `Bearer ${jwt}`,
           },
         };
-        const response = await axios.delete(url, options);
+        await axios.delete(url, options);
       }
     } catch (error) {
       console.log(error)
@@ -46,7 +46,7 @@ export default function Table({ urlActual, empleados }) {
               <td>{employee.name}</td>
               <td>{employee.lastName}</td>
               <td>{employee.birthDate}</td>
-              <td><MdDelete onClick={() => {handleDelete(employee.id)}} /></td>
+              <td><MdDelete className='w-5 h-5 cursor-pointer' onClick={() => {handleDelete(employee.id)}} /></td>
             </tr>
           ))}
           {urlActual === "/dashboard/reporte" && empleados && empleados.map((employee, index) => (
