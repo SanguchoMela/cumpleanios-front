@@ -68,6 +68,9 @@ const Report = () => {
       columns: columns,
       body: rows,
       startY: 30,
+      headStyles: {
+        fillColor: [59, 130, 246],
+      },
     });
 
     doc.save(`${currentMonthBirthday}.pdf`);
